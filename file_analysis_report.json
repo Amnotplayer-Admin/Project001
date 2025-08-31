@@ -1,0 +1,78 @@
+{
+  "timestamp": "2025-08-31T16:21:07.074946",
+  "results": {
+    "is_vulnerable": true,
+    "vulnerability_count": 7,
+    "vulnerabilities": [
+      {
+        "type": "code_injection",
+        "pattern": "eval\\s*\\(",
+        "matches": 1,
+        "risk": "HIGH"
+      },
+      {
+        "type": "code_injection",
+        "pattern": "exec\\s*\\(",
+        "matches": 1,
+        "risk": "HIGH"
+      },
+      {
+        "type": "command_injection",
+        "pattern": "os\\.system\\s*\\(",
+        "matches": 1,
+        "risk": "HIGH"
+      },
+      {
+        "type": "command_injection",
+        "pattern": "subprocess\\.call\\s*\\(",
+        "matches": 1,
+        "risk": "HIGH"
+      },
+      {
+        "type": "pickle_deserialization",
+        "pattern": "pickle\\.loads\\s*\\(",
+        "matches": 1,
+        "risk": "MEDIUM"
+      },
+      {
+        "type": "http_request",
+        "pattern": "urllib\\.request\\.urlopen\\s*\\(",
+        "matches": 1,
+        "risk": "LOW"
+      },
+      {
+        "type": "password_exposure",
+        "pattern": "print\\s*\\(\\s*[^)]*password[^)]*\\)",
+        "matches": 1,
+        "risk": "LOW"
+      }
+    ],
+    "risk_level": "CRITICAL",
+    "features": {
+      "lines": 65,
+      "chars": 1418,
+      "words": 140,
+      "security_keywords": 22,
+      "dangerous_functions": 27,
+      "sql_queries": 1,
+      "http_usage": 2
+    },
+    "recommendations": [
+      "⚠️  พบช่องโหว่ในโค้ด! กรุณาตรวจสอบและแก้ไข",
+      "• หลีกเลี่ยงการใช้ eval(), exec() หรือ __import__()",
+      "• หลีกเลี่ยงการใช้ eval(), exec() หรือ __import__()",
+      "• หลีกเลี่ยงการใช้ os.system() หรือ subprocess.call()",
+      "• หลีกเลี่ยงการใช้ os.system() หรือ subprocess.call()",
+      "• หลีกเลี่ยงการใช้ pickle.loads() กับข้อมูลจากผู้ใช้",
+      "• ตรวจสอบ URL ก่อนเปิด",
+      "• ไม่แสดงรหัสผ่านหรือข้อมูลที่สำคัญ",
+      "• โค้ดมีคำที่เกี่ยวข้องกับความปลอดภัยมาก ควรตรวจสอบเพิ่มเติม",
+      "• พบฟังก์ชันที่อาจเป็นอันตราย ควรตรวจสอบการใช้งาน"
+    ],
+    "file_info": {
+      "path": "C:/Users/AMNOTPLAYER/OneDrive/Desktop/Project Solo/vulnerability-scanner-nodejs/vulnerability-scanner-nodejs/explex.py",
+      "size": 1482,
+      "modified": "2025-08-31 16:04:58.082947"
+    }
+  }
+}
